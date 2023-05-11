@@ -1,0 +1,36 @@
+﻿<Window x:Class="Server.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Server"
+        mc:Ignorable="d"
+        Title="Walking Squares" SizeToContent="WidthAndHeight" ResizeMode="NoResize" Icon="icon.ico">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="16">
+                <StackPanel Orientation="Vertical">
+                    <Label HorizontalAlignment="Center" FontSize="16">Espaço de tempo entre o spawn</Label>
+                    <TextBox Name="FruitTime" VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="0, 8, 0, 8" TextAlignment="Center" FontSize="24" TextChanged="FruitTime_TextChanged">5</TextBox>
+
+                    <CheckBox Name="SpawnFruits" Content="Spawn Fruits" IsChecked="True" HorizontalAlignment="Center" Margin="16, 0, 16, 16" FontSize="16" Checked="SpawnFruits_Toggle" Unchecked="SpawnFruits_Toggle" />
+
+                    <Label HorizontalAlignment="Center" Margin="0, 0, 0, 8" FontSize="16">Limite de jogadores</Label>
+                    <TextBox Name="PlayerLimit" Margin="0, 0, 0, 16" TextAlignment="Center" FontSize="24" TextChanged="PlayerLimit_TextChanged">15</TextBox>
+                
+                    <Button Name="ToggleServer" FontSize="24" Click="ToggleServer_Click">Play</Button>
+
+                    <Button Name="ClearScore" Margin="0, 8, 0, 0" FontSize="24" Click="ClearScore_Click">Clear Score</Button>
+                </StackPanel>
+
+                <ListBox Name="PlayerList" Width="300" Margin="16, 0, 0, 0"></ListBox>
+            </StackPanel>
+
+            <ScrollViewer Name="ConsoleScroll" Margin="16, 0, 16, 16" Height="200">
+                <TextBlock Name="Console" TextWrapping="Wrap" Width="600" FontFamily="Consolas" FontSize="14" Background="LightGray"></TextBlock>
+            </ScrollViewer>
+
+            <Button Name="ClearConsole" Margin="16, 0, 16, 16" FontSize="32" Click="ClearConsole_Click">Clear Console</Button>
+        </StackPanel>
+    </Grid>
+</Window>
