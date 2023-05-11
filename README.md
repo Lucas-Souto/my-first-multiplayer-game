@@ -1,5 +1,6 @@
 # my-first-multiplayer-game
-A little C# multiplayer game, based on <a href="https://github.com/filipedeschamps">@filipedeschamps</a> game challenge. <br>
+After years of game development and C# programming, I decided to "tomá vergonha na cara" and started to learn Networking for games!<br>
+This is a little C# multiplayer game, based on <a href="https://github.com/filipedeschamps">@filipedeschamps</a> game challenge. <br>
 The game has some connection/communication bugs that I really need to learn how to fix into the next game... 😅
 
 # Server side
