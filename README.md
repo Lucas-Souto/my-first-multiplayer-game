@@ -13,3 +13,7 @@ The game has some connection/communication bugs that I really need to learn how 
   * Screen warp (like pacman);
   * Two type of fruits to increase your score;
   * Admin dashboard.
+
+# Dependencies
+ * The client uses MonoGame (v3.7.1.189). But XNA and FNA should work too;
+ * The server uses WPF.
