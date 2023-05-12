@@ -1,20 +1,23 @@
 # my-first-multiplayer-game
 After years of game development and C# programming, I decided to "tomá vergonha na cara" and started to learn Networking for games!<br>
 This is a little C# multiplayer game, based on <a href="https://github.com/filipedeschamps">@filipedeschamps</a> game challenge. <br>
-The game has some connection/communication bugs that I really need to learn how to fix into the next game... 😅
+This repository will have 3 implementations:
 
-# Server side
-![Admin dashboard](https://imagizer.imageshack.com/img924/8702/0tGgAy.png)
+# Walking Squares: - Done!
+ * Admin dashboard (server);
+ * Walking squares with scores;
+ * Screen warp (like pacman);
+ * Two type of fruits to increase your score.
 
-# Client
-![Clients](https://imagizer.imageshack.com/img924/6715/JF8kHb.png)
+# Walking Squares - Remake:
+This version will focuse on:
+ * Destroy the previous game's bugs;
+ * Make different rooms for each group of players.
 
-# Features
-  * Online;
-  * Screen warp (like pacman);
-  * Two type of fruits to increase your score;
-  * Admin dashboard.
-
-# Dependencies
- * The client uses MonoGame (v3.7.1.189). But XNA and FNA should work too;
- * The server uses WPF.
+# Hungry Mices:
+ * Account system;
+ * Skins;
+ * Animations;
+ * Leaderboard;
+ * Private and public rooms (with different sizes);
+ * Obstacles.
