@@ -11,13 +11,5 @@ This repository will have 3 implementations:
 
 # Walking Squares - Remake:
 This version will focuse on:
- * Destroy the previous game's bugs;
+ * Solving the problems of the original game;
  * Make different rooms for each group of players.
-
-# Hungry Mices:
- * Account system;
- * Skins;
- * Animations;
- * Leaderboard;
- * Private and public rooms (with different sizes);
- * Obstacles.
