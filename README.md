@@ -12,4 +12,6 @@ This repository will have 3 implementations:
 # Walking Squares - Remake:
 This version will focuse on:
  * Solving the problems of the original game;
- * Make different rooms for each group of players.
+ * Using udp protocol;
+ * Making a free movement;
+ * Polish the experience.
