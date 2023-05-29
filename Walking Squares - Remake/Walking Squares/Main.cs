@@ -49,7 +49,13 @@ namespace WS
 
             base.LoadContent();
         }
-        
+
+        protected override void OnExiting(object sender, EventArgs args)
+        {
+            _client?.Close();
+            base.OnExiting(sender, args);
+        }
+
         protected override void Update(GameTime gameTime)
         {
             float deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;

@@ -41,6 +41,14 @@ namespace WS
             }
         }
 
+        public void Close()
+        {
+            _listenThread.Abort();
+            _socket.Dispose();
+
+            _socket = null;
+        }
+
         private void Listen()
         {
             try
@@ -49,6 +57,8 @@ namespace WS
 
                 while (true)
                 {
+                    if (_socket == null) return;
+
                     Message message = _socket.ReceiveMessage(ref server);
                     string ePString = (_socket.LocalEndPoint as IPEndPoint).Stringfy();
 
@@ -83,10 +93,11 @@ namespace WS
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                Listen();
+
+                if (_socket != null) Listen();
             }
         }
 
-        public void Send(Message message) => _socket.SendMessage(server, message);
+        public void Send(Message message) => _socket?.SendMessage(server, message);
     }
 }
