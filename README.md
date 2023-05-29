@@ -9,7 +9,7 @@ This repository will have 3 implementations:
  * Screen warp (like pacman);
  * Two type of fruits to increase your score.
 
-# Walking Squares - Remake:
+# Walking Squares - Remake: - Done!
 This version will focuse on:
  * Solving the problems of the original game;
  * Using udp protocol;
