@@ -43,6 +43,11 @@ namespace Server
                 _listenThread.Start();
                 _updateThread.Start();
 
+                uint IOC_IN = 0x80000000;
+                uint IOC_VENDOR = 0x18000000;
+                uint SIO_UDP_CONNRESET = IOC_IN | IOC_VENDOR | 12;
+                _socket.IOControl((int)SIO_UDP_CONNRESET, new byte[] { Convert.ToByte(false) }, null);
+
                 Console.WriteLine("Servidor iniciado!");
             }
             catch (Exception e)
@@ -69,7 +74,7 @@ namespace Server
                 {
                     EndPoint client = new IPEndPoint(IPAddress.Any, 0);
                     Message message = _socket.ReceiveMessage(ref client);
-
+                    
                     if (message.Type != MessageType.None)
                     {
                         IPEndPoint clientEP = client as IPEndPoint;
@@ -93,7 +98,7 @@ namespace Server
                     }
                 }
             }
-            catch (Exception e)
+            catch (SocketException e)
             {
                 Console.WriteLine(e.Message);
                 Listen();
@@ -125,7 +130,20 @@ namespace Server
         public void Send(Message message, EndPoint endPoint) => _socket.SendMessage(endPoint, message);
         public void BroadCast(Message message)
         {
-            for (int i = 0; i < clients.Count; i++) Send(message, clients[i]);
+            for (int i = clients.Count - 1; i >= 0; i--)
+            {
+                try
+                {
+                    Send(message, clients[i]);
+                }
+                catch
+                {
+                    string id = ((IPEndPoint)clients[i]).Stringfy();
+
+                    Console.WriteLine("O {0} se desconectou!", id);
+                    RemovePlayer(id);
+                }
+            }
         }
     }
 }
